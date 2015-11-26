@@ -7,7 +7,7 @@ package com.blogcalendar.reference;
  * Class contains all common constants using in Blog calendar utility.
  *
  */
-public final class Constants {
+public final class Constant {
 	
 	public static final int DAYS_IN_WEEK = 7;
 	
@@ -29,7 +29,7 @@ public final class Constants {
 	public static final int INDEX_NOT_FOUND = -1;
 	
 	
-	private Constants() {
+	private Constant() {
 		
 	}
 	

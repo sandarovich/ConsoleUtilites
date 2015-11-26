@@ -3,7 +3,7 @@ package com.blogcalendar.languagestrategy;
 import java.util.EnumMap;
 import java.util.Map;
 
-import com.blogcalendar.reference.TIME;
+import com.blogcalendar.reference.TIMEUNIT;
 
 /**
  * @author Olexander Kolodiazhny
@@ -28,16 +28,16 @@ public final class UkrLocalization {
 			"більше року: "
 	};
 	
-	private static Map<TIME, String[]> scopeUkr = new EnumMap
-			<TIME, String[]> (TIME.class);
+	private static Map<TIMEUNIT, String[]> scopeUkr = new EnumMap
+			<TIMEUNIT, String[]> (TIMEUNIT.class);
 	
 	private UkrLocalization() {
-		scopeUkr.put(TIME.TIMESTRATEGY, STRATEGY);
-		scopeUkr.put(TIME.YEARS, YEARS);
-		scopeUkr.put(TIME.MONTHS, MONTHS);
-		scopeUkr.put(TIME.DAYS, DAYS);
-		scopeUkr.put(TIME.HOURS, HOURS);
-		scopeUkr.put(TIME.MINUTES, MINUTES);	
+		scopeUkr.put(TIMEUNIT.TIMESTRATEGY, STRATEGY);
+		scopeUkr.put(TIMEUNIT.YEARS, YEARS);
+		scopeUkr.put(TIMEUNIT.MONTHS, MONTHS);
+		scopeUkr.put(TIMEUNIT.DAYS, DAYS);
+		scopeUkr.put(TIMEUNIT.HOURS, HOURS);
+		scopeUkr.put(TIMEUNIT.MINUTES, MINUTES);	
 	}
 	
 	/**
@@ -55,7 +55,7 @@ public final class UkrLocalization {
 	* @return String text of time unit, relatively to time unit input label
 	*/
 			
-	public static String getTranslation(TIME timeLabel, int index){
+	public static String getTranslation(TIMEUNIT timeLabel, int index){
 		return scopeUkr.get(timeLabel)[index];
 	}
 

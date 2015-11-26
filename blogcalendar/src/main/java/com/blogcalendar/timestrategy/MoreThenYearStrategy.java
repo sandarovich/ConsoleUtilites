@@ -3,8 +3,8 @@ package com.blogcalendar.timestrategy;
 import org.joda.time.Period;
 
 import com.blogcalendar.languagestrategy.LanguageStrategy;
-import com.blogcalendar.reference.Constants;
-import com.blogcalendar.reference.TIME;
+import com.blogcalendar.reference.Constant;
+import com.blogcalendar.reference.TIMEUNIT;
 
 /**
  * @author Olexander Kolodiazhny
@@ -25,11 +25,11 @@ public class MoreThenYearStrategy implements TimeStrategy {
 	@Override
 	public String getDescriptiveLocalization(Period period, LanguageStrategy languageStrategy) {
 
-		String out = languageStrategy.getLocalizedText(TIME.TIMESTRATEGY, 4) 
-				+  languageStrategy.getLocalizedText (TIME.YEARS, period.getYears())
-				+  languageStrategy.getLocalizedText (TIME.MONTHS, period.getMonths()) 
-				+  languageStrategy.getLocalizedText (TIME.DAYS, period.getDays() 
-						+ Constants.DAYS_IN_WEEK * period.getWeeks());
+		String out = languageStrategy.getLocalizedText(TIMEUNIT.TIMESTRATEGY, 4) 
+				+  languageStrategy.getLocalizedText (TIMEUNIT.YEARS, period.getYears())
+				+  languageStrategy.getLocalizedText (TIMEUNIT.MONTHS, period.getMonths()) 
+				+  languageStrategy.getLocalizedText (TIMEUNIT.DAYS, period.getDays() 
+						+ Constant.DAYS_IN_WEEK * period.getWeeks());
 
 		return out;
 	}

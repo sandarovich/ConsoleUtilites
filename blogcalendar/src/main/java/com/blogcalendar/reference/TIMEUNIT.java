@@ -6,7 +6,7 @@ package com.blogcalendar.reference;
  * Enumerator that listed all main time units.
  *
  */
-public enum TIME {
+public enum TIMEUNIT {
 	TIMESTRATEGY,
 	YEARS,
 	MONTHS,

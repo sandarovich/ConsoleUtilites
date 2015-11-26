@@ -1,14 +1,14 @@
 package com.blogcalendar.languagestrategy;
 
-import com.blogcalendar.reference.TIME;
+import com.blogcalendar.reference.TIMEUNIT;
 
 /**
- * @author Olexander Kolodiazhny
- * Интерфейс предназначен для получения, нужного склонения единицы времени, в зависимости
- * от языка и числового значения времени.
+ * @author Olexander Kolodiazhny Интерфейс предназначен для получения, нужного
+ *         склонения единицы времени, в зависимости от языка и числового
+ *         значения времени.
  *
  */
 
 public interface LanguageStrategy {
-	public String getLocalizedText(TIME timeLabel, int value);
+    public String getLocalizedText(TIMEUNIT timeLabel, int value);
 }

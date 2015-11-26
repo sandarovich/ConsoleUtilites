@@ -3,7 +3,7 @@ package com.blogcalendar.timestrategy;
 import org.joda.time.Period;
 
 import com.blogcalendar.languagestrategy.LanguageStrategy;
-import com.blogcalendar.reference.TIME;
+import com.blogcalendar.reference.TIMEUNIT;
 
 /**
  * @author Olexander Kolodiazhny
@@ -22,7 +22,7 @@ public class LessThenMinuteStrategy implements TimeStrategy {
 	@Override
 	public String getDescriptiveLocalization(Period period, LanguageStrategy languageStrategy) {
 		
-		return languageStrategy.getLocalizedText(TIME.TIMESTRATEGY, 0);
+		return languageStrategy.getLocalizedText(TIMEUNIT.TIMESTRATEGY, 0);
 	}
 
 }

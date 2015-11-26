@@ -2,7 +2,7 @@ package com.blogcalendar.languagestrategy;
 
 import java.util.Map;
 
-import com.blogcalendar.reference.TIME;
+import com.blogcalendar.reference.TIMEUNIT;
 
 import java.util.EnumMap;
 
@@ -28,16 +28,16 @@ public class EngLocalization {
 			"more than a year: "
 	};
 	
-	private static Map<TIME, String[]> scopeEng = new EnumMap
-			<TIME, String[]> (TIME.class);
+	private static Map<TIMEUNIT, String[]> scopeEng = new EnumMap
+			<TIMEUNIT, String[]> (TIMEUNIT.class);
 			
 	private EngLocalization () {
-		scopeEng.put(TIME.TIMESTRATEGY, STRATEGY);
-		scopeEng.put(TIME.YEARS, YEARS);
-		scopeEng.put(TIME.MONTHS, MONTHS);
-		scopeEng.put(TIME.DAYS, DAYS);
-		scopeEng.put(TIME.HOURS, HOURS);
-		scopeEng.put(TIME.MINUTES, MINUTES);	
+		scopeEng.put(TIMEUNIT.TIMESTRATEGY, STRATEGY);
+		scopeEng.put(TIMEUNIT.YEARS, YEARS);
+		scopeEng.put(TIMEUNIT.MONTHS, MONTHS);
+		scopeEng.put(TIMEUNIT.DAYS, DAYS);
+		scopeEng.put(TIMEUNIT.HOURS, HOURS);
+		scopeEng.put(TIMEUNIT.MINUTES, MINUTES);	
 	}
 	
 	/**
@@ -54,7 +54,7 @@ public class EngLocalization {
 	* 
 	* @return String text of time unit, relatively to time unit input label
 	*/
-	public static String getTranslation(TIME timeLabel, int index){
+	public static String getTranslation(TIMEUNIT timeLabel, int index){
 		return scopeEng.get(timeLabel)[index];
 	}
 }

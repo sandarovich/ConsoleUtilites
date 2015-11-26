@@ -57,7 +57,7 @@ public class DescriptiveDateLengthCalculatorTest {
 		} else {
 			System.out.println("Input Date is greater then now");
 		}
-		new Intro().run();
+		new IntroFlash().run();
 	}
 	
 	public String readUserInput() throws IOException {

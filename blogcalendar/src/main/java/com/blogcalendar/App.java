@@ -1,4 +1,4 @@
-package ua.goit.sandarovich.finalproject;
+package com.blogcalendar;
 
 import org.apache.log4j.Logger;
 
@@ -20,7 +20,7 @@ public class App {
     public static void main(String[] args) {
         
         LOGGER.info("Starting...");
-        
+        new IntroFlash().run();
         
         LOGGER.info("Bye");
     }

@@ -3,7 +3,7 @@ package com.blogcalendar.languagestrategy;
 import java.util.EnumMap;
 import java.util.Map;
 
-import com.blogcalendar.reference.TIME;
+import com.blogcalendar.reference.TIMEUNIT;
 
 /**
  * @author Olexander Kolodiazhny
@@ -27,20 +27,20 @@ public class RusLocalization {
 			"больше года: "
 			
 	};
-	private static Map<TIME, String[]> scopeRus = new EnumMap
-			<TIME, String[]> (TIME.class);
+	private static Map<TIMEUNIT, String[]> scopeRus = new EnumMap
+			<TIMEUNIT, String[]> (TIMEUNIT.class);
 			
 	public RusLocalization() {
 			
 	}
 	
 	static {
-		scopeRus.put(TIME.TIMESTRATEGY, STRATEGY);
-		scopeRus.put(TIME.YEARS, YEARS);
-		scopeRus.put(TIME.MONTHS, MONTHS);
-		scopeRus.put(TIME.DAYS, DAYS);
-		scopeRus.put(TIME.HOURS, HOURS);
-		scopeRus.put(TIME.MINUTES, MINUTES);
+		scopeRus.put(TIMEUNIT.TIMESTRATEGY, STRATEGY);
+		scopeRus.put(TIMEUNIT.YEARS, YEARS);
+		scopeRus.put(TIMEUNIT.MONTHS, MONTHS);
+		scopeRus.put(TIMEUNIT.DAYS, DAYS);
+		scopeRus.put(TIMEUNIT.HOURS, HOURS);
+		scopeRus.put(TIMEUNIT.MINUTES, MINUTES);
 	}
 		
 	/**
@@ -58,7 +58,7 @@ public class RusLocalization {
 	* @return String text of time unit, relatively to time unit input label
 	*/
 			
-	public static String getTranslation(TIME timeLabel, int index){
+	public static String getTranslation(TIMEUNIT timeLabel, int index){
 		return scopeRus.get(timeLabel)[index];
 	}
 	

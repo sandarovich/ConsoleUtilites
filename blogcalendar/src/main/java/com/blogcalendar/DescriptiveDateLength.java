@@ -6,7 +6,7 @@ import org.joda.time.DateTime;
 import org.joda.time.Period;
 
 import com.blogcalendar.languagestrategy.LanguageStrategy;
-import com.blogcalendar.reference.Constants;
+import com.blogcalendar.reference.Constant;
 import com.blogcalendar.timestrategy.*;
 
 
@@ -58,16 +58,16 @@ public class DescriptiveDateLength {
 			timeStrategy = new LessThenYearStrategy();
 		}  else if (this.period.getYears()  == 0 
 				&& this.period.getMonths() == 0 
-				&& this.period.getDays() + Constants.DAYS_IN_WEEK * this.period.getWeeks()  >= 1) {
+				&& this.period.getDays() + Constant.DAYS_IN_WEEK * this.period.getWeeks()  >= 1) {
 			timeStrategy = new LessThenMonthStrategy();
 		} else if (this.period.getYears()  == 0 
 				&& this.period.getMonths() == 0 
-				&& this.period.getDays() + Constants.DAYS_IN_WEEK * this.period.getWeeks() == 0 
+				&& this.period.getDays() + Constant.DAYS_IN_WEEK * this.period.getWeeks() == 0 
 				&& this.period.getMinutes() >= 1) {
 			timeStrategy = new LessThenDayStrategy();
 		} else if (this.period.getYears()  == 0 
 				&& this.period.getMonths() == 0 
-				&& this.period.getDays() + Constants.DAYS_IN_WEEK * this.period.getWeeks() == 0 
+				&& this.period.getDays() + Constant.DAYS_IN_WEEK * this.period.getWeeks() == 0 
 				&& this.period.getMinutes() == 0) {
 			timeStrategy = new LessThenMinuteStrategy();
 		}	

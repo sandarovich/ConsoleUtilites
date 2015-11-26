@@ -1,7 +1,7 @@
 package com.blogcalendar.languagestrategy;
 
-import com.blogcalendar.reference.Constants;
-import com.blogcalendar.reference.TIME;
+import com.blogcalendar.reference.Constant;
+import com.blogcalendar.reference.TIMEUNIT;
 
 /**
  * @author Olexander Kolodiazhny
@@ -21,22 +21,22 @@ import com.blogcalendar.reference.TIME;
 public class RussianLanguageStrategy implements LanguageStrategy {
 		
 	private int RussianRule(int val) {
-		if (val % Constants.RUS_SEQUENCE_LIMIT == Constants.RUS_SINGULAR) {
-			return Constants.INDEX_SINGULAR;
-		} else if (val % Constants.RUS_SEQUENCE_LIMIT > Constants.RUS_SINGULAR 
-				&& val % Constants.RUS_SEQUENCE_LIMIT < Constants.RUS_PLURAL_END) {
-			return Constants.INDEX_PLURAL_FORM_ONE;
-		} else if (val % Constants.RUS_SEQUENCE_LIMIT >= Constants.RUS_PLURAL_END
-				|| val % Constants.RUS_SEQUENCE_LIMIT == Constants.RUS_PLURAL_START  ) {
-			return Constants.INDEX_PLURAL_FORM_TWO;
+		if (val % Constant.RUS_SEQUENCE_LIMIT == Constant.RUS_SINGULAR) {
+			return Constant.INDEX_SINGULAR;
+		} else if (val % Constant.RUS_SEQUENCE_LIMIT > Constant.RUS_SINGULAR 
+				&& val % Constant.RUS_SEQUENCE_LIMIT < Constant.RUS_PLURAL_END) {
+			return Constant.INDEX_PLURAL_FORM_ONE;
+		} else if (val % Constant.RUS_SEQUENCE_LIMIT >= Constant.RUS_PLURAL_END
+				|| val % Constant.RUS_SEQUENCE_LIMIT == Constant.RUS_PLURAL_START  ) {
+			return Constant.INDEX_PLURAL_FORM_TWO;
 		} else {
-			return Constants.INDEX_NOT_FOUND;
+			return Constant.INDEX_NOT_FOUND;
 		}
 	}
 	
 	@Override
-	public String getLocalizedText(TIME timeLabel, int value) {		
-		if (timeLabel == TIME.TIMESTRATEGY) {
+	public String getLocalizedText(TIMEUNIT timeLabel, int value) {		
+		if (timeLabel == TIMEUNIT.TIMESTRATEGY) {
 			return RusLocalization.getTranslation(timeLabel, value);
 		} else if (value != 0) {
 			return value + " " 

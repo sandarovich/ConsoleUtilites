@@ -1,7 +1,7 @@
 package com.blogcalendar.languagestrategy;
 
-import com.blogcalendar.reference.Constants;
-import com.blogcalendar.reference.TIME;
+import com.blogcalendar.reference.Constant;
+import com.blogcalendar.reference.TIMEUNIT;
 
 /**
  * @author Olexander Kolodiazhny
@@ -22,9 +22,9 @@ public class EnglishLanguageStrategy implements LanguageStrategy {
 		
 	
 	@Override
-	public String getLocalizedText(TIME timeLabel, int value) {
+	public String getLocalizedText(TIMEUNIT timeLabel, int value) {
 	
-		if (timeLabel == TIME.TIMESTRATEGY) {
+		if (timeLabel == TIMEUNIT.TIMESTRATEGY) {
 			return EngLocalization.getTranslation(timeLabel, value);
 		} else if (value != 0) {
 			return value + " " 
@@ -37,8 +37,8 @@ public class EnglishLanguageStrategy implements LanguageStrategy {
 	}
 	
 	private int EnglishRule(int val) {
-		return (val == Constants.ENG_SINGULAR) ? 
-				Constants.INDEX_SINGULAR : Constants.INDEX_PLURAL_FORM_ONE;
+		return (val == Constant.ENG_SINGULAR) ? 
+				Constant.INDEX_SINGULAR : Constant.INDEX_PLURAL_FORM_ONE;
 	};
 
 }

@@ -3,7 +3,7 @@ package com.blogcalendar;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class Intro implements Runnable {
+public class IntroFlash implements Runnable {
 
 	@Override
 	public void run() {

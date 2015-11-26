@@ -1,7 +1,7 @@
 package com.blogcalendar.languagestrategy;
 
-import com.blogcalendar.reference.Constants;
-import com.blogcalendar.reference.TIME;
+import com.blogcalendar.reference.Constant;
+import com.blogcalendar.reference.TIMEUNIT;
 
 /**
  * @author Olexander Kolodiazhny
@@ -20,23 +20,23 @@ import com.blogcalendar.reference.TIME;
 public class UkraineLanguageStrategy implements LanguageStrategy {
 	
 	private int UkraineRule(int val) {
-		if (val % Constants.UKR_SEQUENCE_LIMIT == Constants.UKR_SINGULAR) {
-			return Constants.INDEX_SINGULAR;
-		} else if (val % Constants.UKR_SEQUENCE_LIMIT > Constants.UKR_SINGULAR 
-				&& val % Constants.UKR_SEQUENCE_LIMIT < Constants.UKR_PLURAL_END) {
-			return Constants.INDEX_PLURAL_FORM_ONE;
-		} else if (val % Constants.UKR_SEQUENCE_LIMIT >= Constants.UKR_PLURAL_END
-				|| val % Constants.UKR_SEQUENCE_LIMIT == Constants.UKR_PLURAL_START  ) {
-			return Constants.INDEX_PLURAL_FORM_TWO;
+		if (val % Constant.UKR_SEQUENCE_LIMIT == Constant.UKR_SINGULAR) {
+			return Constant.INDEX_SINGULAR;
+		} else if (val % Constant.UKR_SEQUENCE_LIMIT > Constant.UKR_SINGULAR 
+				&& val % Constant.UKR_SEQUENCE_LIMIT < Constant.UKR_PLURAL_END) {
+			return Constant.INDEX_PLURAL_FORM_ONE;
+		} else if (val % Constant.UKR_SEQUENCE_LIMIT >= Constant.UKR_PLURAL_END
+				|| val % Constant.UKR_SEQUENCE_LIMIT == Constant.UKR_PLURAL_START  ) {
+			return Constant.INDEX_PLURAL_FORM_TWO;
 		} else {
-			 return Constants.INDEX_NOT_FOUND;
+			 return Constant.INDEX_NOT_FOUND;
 		}
 	}
 	
 	@Override
-	public String getLocalizedText(TIME timeLabel, int value) {
+	public String getLocalizedText(TIMEUNIT timeLabel, int value) {
 		
-		if (timeLabel == TIME.TIMESTRATEGY)  {
+		if (timeLabel == TIMEUNIT.TIMESTRATEGY)  {
 			return UkrLocalization.getTranslation(timeLabel, value);
 		} else if (value != 0) {
 			return value + " " 
