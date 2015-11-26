@@ -1,6 +1,6 @@
 package com.blogcalendar;
 
-import org.apache.log4j.Logger;
+import org.apache.log4j.Logger;;
 
 /**
  * @author Olexander Kolodiazhny 2015

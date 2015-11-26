@@ -3,12 +3,14 @@ package com.blogcalendar;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class IntroFlash implements Runnable {
+import org.apache.log4j.Logger;
 
+public class IntroFlash implements Runnable {
+    static final Logger LOGGER = Logger.getLogger(IntroFlash.class);
 	@Override
 	public void run() {
-		System.out.println("*************************************************************************************************************************");
-		System.out.println("*************************************************************************************************************************");
+		LOGGER.info("*************************************************************************************************************************");
+		LOGGER.info("*************************************************************************************************************************");
 		System.out.println("______ _ _                           _____ _     _                             _        _    ___          ");
 		System.out.println("| ___ (_) |                         /  ___| |   (_)                           | |      | |  / _ \\         ");
 		System.out.println("| |_/ /_| |_ ___   _ __ ___  _   _  \\ \'--.| |__  _ _ __   ___   _ __ ___   ___| |_ __ _| | / /_\\ \\___ ___");
