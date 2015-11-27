@@ -8,6 +8,7 @@ import java.util.Scanner;
 import org.apache.log4j.Logger;
 
 import com.blogcalendar.languagestrategy.*;
+import com.blogcalendar.util.Constant;
 
 /**
  * @author Olexander Kolodiazhny 2015
@@ -52,7 +53,9 @@ public class App {
         DescriptiveDateLength ddl = new DescriptiveDateLength(entryDate);
         ddl.setStrategy(strategy);
         App.LOGGER.info("*****************************************");
-        LOGGER.info("Out: " + ddl.getDescriptiveDateLength());
+        LOGGER.info(Constant.ANSI_GREEN 
+                + "Out: " + ddl.getDescriptiveDateLength()
+                + Constant.ANSI_RESET );
         App.LOGGER.info("*****************************************");
 
     }

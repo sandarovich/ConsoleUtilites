@@ -11,6 +11,7 @@ import com.blogcalendar.languagestrategy.EnglishLanguageStrategy;
 import com.blogcalendar.languagestrategy.LanguageStrategy;
 import com.blogcalendar.languagestrategy.RussianLanguageStrategy;
 import com.blogcalendar.languagestrategy.UkraineLanguageStrategy;
+import com.blogcalendar.util.Constant;
 
 public class UserIO {
 
@@ -24,10 +25,11 @@ public class UserIO {
         App.LOGGER.info("1 - English");
         App.LOGGER.info("2 - Українська"); 
         App.LOGGER.info("3 - Русский");
-
+        App.LOGGER.info("");
+        
         while (true) {
             rl = reader.readLine();
-            
+
             if (rl.matches("\\d")) {
                 int n = Integer.parseInt(rl);
                 if (n == 1) {
@@ -48,11 +50,11 @@ public class UserIO {
         App.LOGGER.info("********* Enter Date ***************");
         App.LOGGER.info("mm.dd.yyyy hh:mm:ss ");
         App.LOGGER.info("*****************************************");
-        
+        App.LOGGER.info("");
         // Setting date format according  pattern 
 
         Date entryDate = null;
-        
+
         while(true) {
             rl = reader.readLine();
             try {
@@ -61,12 +63,16 @@ public class UserIO {
                 if (entryDate.before(now)) {
                     return entryDate;
                 } else{
-                    App.LOGGER.warn("--> Sorry.Input Date is greater then now. Please try again.");
+                    App.LOGGER.warn(Constant.ANSI_RED 
+                            + "--> Sorry.Input Date is greater then now. Please try again."
+                            + Constant.ANSI_RESET);
                     continue;
                 }
-                
+
             } catch(ParseException e) {
-                App.LOGGER.warn("Please check input format and try again " + e.getMessage());
+                App.LOGGER.warn(Constant.ANSI_RED +
+                        "Please check input format and try again " + e.getMessage()
+                        + Constant.ANSI_RESET);
                 continue;
             }
         }

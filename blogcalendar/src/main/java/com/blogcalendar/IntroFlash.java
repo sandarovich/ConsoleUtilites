@@ -5,11 +5,13 @@ import java.util.Scanner;
 
 import org.apache.log4j.Logger;
 
+import com.blogcalendar.util.Constant;
+
 public class IntroFlash implements Runnable {
 
     @Override
     public void run() {
-        App.LOGGER.info("*************************************************************************************************************************");
+        App.LOGGER.info(Constant.ANSI_BLUE + "*************************************************************************************************************************" );
         App.LOGGER.info("*************************************************************************************************************************");
         App.LOGGER.info("______ _ _                           _____ _     _                             _        _    ___          ");
         App.LOGGER.info("| ___ (_) |                         /  ___| |   (_)                           | |      | |  / _ \\         ");
@@ -18,7 +20,7 @@ public class IntroFlash implements Runnable {
         App.LOGGER.info("| |_/ / | ||  __/ | | | | | | |_| | /\\__/ / | | | | | | |  __/ | | | | | |  __/ || (_| | | | | | \\__ \\__ \\");
         App.LOGGER.info("\\____/|_|\\__\\___| |_| |_| |_|\\__, | \\____/|_| |_|_|_| |_|\\___| |_| |_| |_|\\___|\\__\\__,_|_| \\_| |_/___/___/");
         App.LOGGER.info("                              __/ |                                                                       ");
-        App.LOGGER.info("                             |___/                                                                        ");
+        App.LOGGER.info(Constant.ANSI_YELLOW +"                             |___/                                                                        ");
         App.LOGGER.info("     ( )	         _____        _         _____          _           _    _____      _            _       _ ");
         App.LOGGER.info("      H		|  __ \\      | |       |  __ \\        (_)         | |  / ____|    | |          | |     | |            ");
         App.LOGGER.info("      H		| |  | | __ _| |_ ___  | |__) |__ _ __ _  ___   __| | | |     __ _| | ___ _   _| | __ _| |_ ___  _ __ ");
@@ -35,7 +37,7 @@ public class IntroFlash implements Runnable {
         App.LOGGER.info("|  '.-+-+-+|   ");      
         App.LOGGER.info("|    \"\"\"\"\"\"|\\");
         App.LOGGER.info("'-.__   __.-'");
-        App.LOGGER.info("     \"\"\" ");
+        App.LOGGER.info("     \"\"\" " + Constant.ANSI_RESET);
         App.LOGGER.info("*************************************************************************************************************************");
         App.LOGGER.info(" OLEXANDER KOLODIAZHNY @ 2015");
         App.LOGGER.info("*************************************************************************************************************************");
