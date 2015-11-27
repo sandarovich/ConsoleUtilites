@@ -13,7 +13,7 @@ import com.blogcalendar.util.TIMEUNIT;
  *
  */
 
-public final class UkrLocalization {
+public  class UkrLocalization {
 	
 	final static String[] YEARS = {"рік", "роки", "років"};
 	final static String[] MONTHS = {"місяць", "місяці", "місяців"};
@@ -31,7 +31,7 @@ public final class UkrLocalization {
 	private static Map<TIMEUNIT, String[]> scopeUkr = new EnumMap
 			<TIMEUNIT, String[]> (TIMEUNIT.class);
 	
-	private UkrLocalization() {
+	static {
 		scopeUkr.put(TIMEUNIT.TIMESTRATEGY, STRATEGY);
 		scopeUkr.put(TIMEUNIT.YEARS, YEARS);
 		scopeUkr.put(TIMEUNIT.MONTHS, MONTHS);

@@ -29,10 +29,6 @@ public class RusLocalization {
 	};
 	private static Map<TIMEUNIT, String[]> scopeRus = new EnumMap
 			<TIMEUNIT, String[]> (TIMEUNIT.class);
-			
-	public RusLocalization() {
-			
-	}
 	
 	static {
 		scopeRus.put(TIMEUNIT.TIMESTRATEGY, STRATEGY);

@@ -30,16 +30,16 @@ public class EngLocalization {
 	
 	private static Map<TIMEUNIT, String[]> scopeEng = new EnumMap
 			<TIMEUNIT, String[]> (TIMEUNIT.class);
-			
-	private EngLocalization () {
-		scopeEng.put(TIMEUNIT.TIMESTRATEGY, STRATEGY);
-		scopeEng.put(TIMEUNIT.YEARS, YEARS);
-		scopeEng.put(TIMEUNIT.MONTHS, MONTHS);
-		scopeEng.put(TIMEUNIT.DAYS, DAYS);
-		scopeEng.put(TIMEUNIT.HOURS, HOURS);
-		scopeEng.put(TIMEUNIT.MINUTES, MINUTES);	
+		
+	static {
+	    scopeEng.put(TIMEUNIT.TIMESTRATEGY, STRATEGY);
+            scopeEng.put(TIMEUNIT.YEARS, YEARS);
+            scopeEng.put(TIMEUNIT.MONTHS, MONTHS);
+            scopeEng.put(TIMEUNIT.DAYS, DAYS);
+            scopeEng.put(TIMEUNIT.HOURS, HOURS);
+            scopeEng.put(TIMEUNIT.MINUTES, MINUTES);
 	}
-	
+		
 	/**
 	* @author Olexander Kolodiazhny
 	* 

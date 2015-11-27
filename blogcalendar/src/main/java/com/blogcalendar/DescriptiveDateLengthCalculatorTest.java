@@ -21,53 +21,44 @@ import com.blogcalendar.languagestrategy.*;
 
 public class DescriptiveDateLengthCalculatorTest {
 
-//	public static void main(String[] args) throws ParseException, IOException {
-//		// *********************************************/
-//		
-//		
-//		
-//		// Входная дата, задаем вручную.
-//		
-//		String userInput = "26.11.2015 19:38:55";
-//
-//		// *********************************************/
-//		
-//		// Задаем стратегию (описал Украинскую, русскую, английскую).
-//		
-//		LanguageStrategy strategy = new RussianLanguageStrategy();
-//				
-//		// Задаем форматирование ввода даты в виде число.месяц.год часы:минуты:секунды
-//		
-//		SimpleDateFormat df = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
-//		
-//		// Пробуем привести входную дату под заданный формат даты, 
-//	
-//		Date entryDate = df.parse(userInput);
-//		Date now = new Date();
-//		System.out.println("In: " +  df.format(entryDate) 
-//			+ " <--> Now: "
-//			+ df.format(now) );
-//		
-//		DescriptiveDateLength testObj = new DescriptiveDateLength(entryDate);
-//		testObj.setStrategy(strategy);
-//		
-//		// Вывод результата.
-//		if (now.after(entryDate)) {
-//			System.out.println("Out: " + testObj.getDescriptiveDateLength());
-//		} else {
-//			System.out.println("Input Date is greater then now");
-//		}
-//		new IntroFlash().run();
-//	}
-//	
-//	public String readUserInput() throws IOException {
-//		String readed;
-//		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-//		
-//		while ((readed = reader.readLine()) != "X") {
-//			
-//		}
-//		return readed;
-//	}
+	public static void main(String[] args) throws ParseException, IOException {
+		// *********************************************/
+		
+		
+		
+		// Входная дата, задаем вручную.
+		
+		String userInput = "26.11.2015 19:38:55";
+
+		// *********************************************/
+		
+		// Задаем стратегию (описал Украинскую, русскую, английскую).
+		
+		LanguageStrategy strategy = new RussianLanguageStrategy();
+				
+		// Задаем форматирование ввода даты в виде число.месяц.год часы:минуты:секунды
+		
+		SimpleDateFormat df = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
+		
+		// Пробуем привести входную дату под заданный формат даты, 
+	
+		Date entryDate = df.parse(userInput);
+		Date now = new Date();
+		System.out.println("In: " +  df.format(entryDate) 
+			+ " <--> Now: "
+			+ df.format(now) );
+		
+		DescriptiveDateLength testObj = new DescriptiveDateLength(entryDate);
+		testObj.setStrategy(strategy);
+		
+		// Вывод результата.
+		if (now.after(entryDate)) {
+			System.out.println("Out: " + testObj.getDescriptiveDateLength());
+		} else {
+			System.out.println("Input Date is greater then now");
+		}
+		
+	}
+	
 
 }

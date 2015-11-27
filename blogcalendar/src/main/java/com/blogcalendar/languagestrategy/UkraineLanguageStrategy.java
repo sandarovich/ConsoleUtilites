@@ -40,8 +40,8 @@ public class UkraineLanguageStrategy implements LanguageStrategy {
 			return UkrLocalization.getTranslation(timeLabel, value);
 		} else if (value != 0) {
 			return value + " " 
-					+ UkrLocalization.getTranslation(timeLabel, UkraineRule(value)) 
-					+ ", ";
+				+ UkrLocalization.getTranslation(timeLabel, UkraineRule(value)) 
+				+ ", ";
 		} else return "";
 	}
 
