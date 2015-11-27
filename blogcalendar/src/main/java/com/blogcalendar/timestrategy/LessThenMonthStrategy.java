@@ -3,8 +3,8 @@ package com.blogcalendar.timestrategy;
 import org.joda.time.Period;
 
 import com.blogcalendar.languagestrategy.LanguageStrategy;
-import com.blogcalendar.reference.Constant;
-import com.blogcalendar.reference.TIMEUNIT;
+import com.blogcalendar.util.Constant;
+import com.blogcalendar.util.TIMEUNIT;
 
 /**
  * @author Olexander Kolodiazhny

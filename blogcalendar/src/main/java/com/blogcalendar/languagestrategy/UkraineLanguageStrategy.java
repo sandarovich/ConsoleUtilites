@@ -1,7 +1,7 @@
 package com.blogcalendar.languagestrategy;
 
-import com.blogcalendar.reference.Constant;
-import com.blogcalendar.reference.TIMEUNIT;
+import com.blogcalendar.util.Constant;
+import com.blogcalendar.util.TIMEUNIT;
 
 /**
  * @author Olexander Kolodiazhny

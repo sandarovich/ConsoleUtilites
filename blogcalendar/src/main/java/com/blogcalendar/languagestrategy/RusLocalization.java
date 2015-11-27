@@ -3,7 +3,7 @@ package com.blogcalendar.languagestrategy;
 import java.util.EnumMap;
 import java.util.Map;
 
-import com.blogcalendar.reference.TIMEUNIT;
+import com.blogcalendar.util.TIMEUNIT;
 
 /**
  * @author Olexander Kolodiazhny

@@ -2,7 +2,7 @@ package com.blogcalendar.languagestrategy;
 
 import java.util.Map;
 
-import com.blogcalendar.reference.TIMEUNIT;
+import com.blogcalendar.util.TIMEUNIT;
 
 import java.util.EnumMap;
 

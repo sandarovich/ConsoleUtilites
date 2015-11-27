@@ -6,8 +6,8 @@ import org.joda.time.DateTime;
 import org.joda.time.Period;
 
 import com.blogcalendar.languagestrategy.LanguageStrategy;
-import com.blogcalendar.reference.Constant;
 import com.blogcalendar.timestrategy.*;
+import com.blogcalendar.util.Constant;
 
 
 /**

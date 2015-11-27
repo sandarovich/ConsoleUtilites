@@ -40,7 +40,7 @@
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
-			<version>1.2.17</version>
+			<version>1.2.16</version>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -89,7 +89,7 @@
 					<configuration>
 						<archive>
 							<manifest>
-								<!-- addClasspath>true</addClasspath> -->
+								<addClasspath>true</addClasspath>
 								<mainClass>com.blogcalendar.App</mainClass>
 							</manifest>
 						</archive>
@@ -98,27 +98,24 @@
 
 				<!-- Includes the runtime dependencies -->
 				<plugin>
-					<groupId>org.dstovall</groupId>
-					<artifactId>onejar-maven-plugin</artifactId>
-					<version>1.4.4</version>
-					<executions>
-						<execution>
-							<goals>
-								<goal>one-jar</goal>
-							</goals>
-						</execution>
-					</executions>
-				</plugin>
+                <groupId>com.jolira</groupId>
+                <artifactId>onejar-maven-plugin</artifactId>
+                <version>1.4.4</version>
+                <executions>
+                    <execution>
+                        <configuration>
+                            <mainClass>com.blogcalendar.App</mainClass>
+                            <onejarVersion>0.97</onejarVersion>
+                            <attachToBuild>true</attachToBuild>
+                        </configuration>
+                        <goals>
+                            <goal>one-jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 			</plugins>
 		</pluginManagement>
 	</build>
-
-	<!-- One-Jar is in the googlecode repository -->
-	<pluginRepositories>
-		<pluginRepository>
-			<id>onejar-maven-plugin.googlecode.com</id>
-			<url>http://onejar-maven-plugin.googlecode.com/svn/mavenrepo</url>
-		</pluginRepository>
-	</pluginRepositories>
 
 </project>

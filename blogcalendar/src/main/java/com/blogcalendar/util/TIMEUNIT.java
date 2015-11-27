@@ -1,4 +1,4 @@
-package com.blogcalendar.reference;
+package com.blogcalendar.util;
 
 /**
  * @author Olexander KOlodiazhny

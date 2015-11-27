@@ -1,6 +1,6 @@
 package com.blogcalendar.languagestrategy;
 
-import com.blogcalendar.reference.TIMEUNIT;
+import com.blogcalendar.util.TIMEUNIT;
 
 /**
  * @author Olexander Kolodiazhny Интерфейс предназначен для получения, нужного
