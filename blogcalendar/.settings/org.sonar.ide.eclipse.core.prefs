@@ -1,5 +1,0 @@
-eclipse.preferences.version=1
-extraProperties=sonar.jdbc.password\=753dfx@@\r\nsonar.jdbc.username\=sonar\r\nsonar.jdbc.url\=jdbc\:postgresql\://localhost/sonarQube\r\nsonar.jdbc.driverClassName\=org.postgresql.Driver\r\nsonar.host.url\=http\://localhost\:9000/sonar
-projectKey=com\:blogcalendar
-serverUrl=http\://localhost\:9000/sonar
-version=2
