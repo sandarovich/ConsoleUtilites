@@ -1,2 +1,4 @@
-# ConsoleUtilites
-Different stuff on Java for daily use tasks.No GUI.
+# Period calculator
+
+1. Integration with travis
+[![Build Status](https://travis-ci.org/sandarovich/ConsoleUtilites.svg?branch=master)](https://travis-ci.org/sandarovich/ConsoleUtilites)
