@@ -23,7 +23,7 @@ public class LessThenDayStrategy extends TimeStrategy {
 
     @Override
     public String getPeriodDescription() {
-        TimeDescriptionFormatter formatter = new TimeDescriptionFormatter("time.strategy.description.less.then.day");
+        TimeDescriptionFormatter formatter = new TimeDescriptionFormatter("time.strategy.description.less.than.day");
         formatter.add(TimeUnit.HOUR, period.getHours());
         formatter.add(TimeUnit.MINUTE, period.getMinutes());
 

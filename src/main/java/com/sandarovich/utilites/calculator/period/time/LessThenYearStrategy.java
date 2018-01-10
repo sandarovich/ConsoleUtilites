@@ -26,7 +26,7 @@ public class LessThenYearStrategy extends TimeStrategy {
 
     @Override
     public String getPeriodDescription() {
-        TimeDescriptionFormatter formatter = new TimeDescriptionFormatter("time.strategy.description.less.then.year");
+        TimeDescriptionFormatter formatter = new TimeDescriptionFormatter("time.strategy.description.less.than.year");
         formatter.add(TimeUnit.MONTH, period.getMonths());
         formatter.add(TimeUnit.DAY, period.getDays() + Days.SEVEN.getDays() * period.getWeeks());
 

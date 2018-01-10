@@ -46,7 +46,7 @@ public class Localization {
         result.put(TimeUnit.DAY,
                 new String[]{"time.unit.day.single.form", "time.unit.day.plural.form.1", "time.unit.day.plural.form.2"});
         result.put(TimeUnit.HOUR,
-                new String[]{" time.unit.hour.single.form ", "time.unit.hour.plural.form.1", "time.unit.hour.plural.form.2"});
+                new String[]{"time.unit.hour.single.form", "time.unit.hour.plural.form.1", "time.unit.hour.plural.form.2"});
         result.put(TimeUnit.MINUTE,
                 new String[]{"time.unit.minute.single.form", "time.unit.minute.plural.form.1", "time.unit.minute.plural.form.2"});
         return result;

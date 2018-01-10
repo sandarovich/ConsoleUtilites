@@ -9,19 +9,26 @@ import org.joda.time.Period;
 /**
  * @author Olexander Kolodiazhny 2015.
  * <p>
- * Calculator utility. Help to calculate periods from entry date to current moment of the time
+ * Period calculator utility. Help to calculate periods from entry date to current moment of the time
  * and represents in text readable and understandable by human.
- * This text can be output in 3 kind of languages (Ukrainian, English, Russian).
+ * Description can be output in 3 languages, using language code (Ukrainian - uk, English - en, Russian - ru).
  * <p>
  * Entry date is passed through constructor.
- * Output is returning by getPeriodDescription()
+ * Output is returning by {@code}getPeriodDescription(String languageCode) {@code}
  */
 
 public class PeriodDescriptionCalculator {
-    private Period period;
+    private final Period period;
+    private final Language language;
 
-    PeriodDescriptionCalculator(LocalDateTime entryDate) {
+    public PeriodDescriptionCalculator(LocalDateTime entryDate) {
         this.period = new Period(entryDate, new LocalDateTime());
+        this.language = Language.from("en");
+    }
+
+    PeriodDescriptionCalculator(LocalDateTime entryDate, String languageCode) {
+        this.period = new Period(entryDate, new LocalDateTime());
+        this.language = Language.from(languageCode);
     }
 
     /**
@@ -30,6 +37,11 @@ public class PeriodDescriptionCalculator {
      */
     public String getPeriodDescription(String languageCode) {
         TimeStrategy timeStrategy = TimeStrategy.from(period, Language.from(languageCode));
+        return timeStrategy.getPeriodDescription();
+    }
+
+    public String getPeriodDescription() {
+        TimeStrategy timeStrategy = TimeStrategy.from(period, language);
         return timeStrategy.getPeriodDescription();
     }
 }

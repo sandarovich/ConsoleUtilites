@@ -2,6 +2,9 @@ package com.sandarovich.utilites.calculator.period.time;
 
 import com.sandarovich.utilites.calculator.period.dto.TimeUnit;
 import com.sandarovich.utilites.calculator.period.language.Language;
+import org.codehaus.plexus.util.StringUtils;
+import org.joda.time.Duration;
+import org.joda.time.Instant;
 import org.joda.time.Period;
 
 public abstract class TimeStrategy {
@@ -15,19 +18,32 @@ public abstract class TimeStrategy {
     }
 
     public static TimeStrategy from(Period period, Language language) {
+        if (isAfterNow(period)) {
+            return new GreatThanStrategy(period, language);
+        }
         if (period.getYears() >= 1) {
             return new MoreThenYearStrategy(period, language);
         }
         if (period.getYears() == 0 && period.getMonths() >= 1) {
             return new LessThenYearStrategy(period, language);
         }
-        if (period.toStandardDays().getDays() > 1) {
+        if (period.toStandardDays().getDays() >= 1) {
             return new LessThenMonthStrategy(period, language);
         }
-        if (period.toStandardMinutes().getMinutes() > 1) {
+        if (period.toStandardMinutes().getMinutes() >= 1) {
             return new LessThenDayStrategy(period, language);
         }
         return new LessThenMinuteStrategy(period, language);
+    }
+
+    private static boolean isAfterNow(Period period) {
+        return getInstantFromPeriod(period).isAfter(Instant.now());
+    }
+
+    private static Instant getInstantFromPeriod(Period period) {
+        Instant now = new Instant();
+        Duration duration = period.toDurationTo(now);
+        return now.minus(duration);
     }
 
     public abstract String getPeriodDescription();
@@ -62,6 +78,9 @@ public abstract class TimeStrategy {
         }
 
         private String trimLastComma(String src) {
+            if (StringUtils.isEmpty(src)) {
+                return src;
+            }
             String result = src.trim();
             if (result.lastIndexOf(',') == result.length() - 1) {
                 return result.substring(0, result.length() - 1);

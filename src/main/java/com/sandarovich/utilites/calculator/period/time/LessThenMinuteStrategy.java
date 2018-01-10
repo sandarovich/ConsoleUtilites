@@ -23,7 +23,7 @@ public class LessThenMinuteStrategy extends TimeStrategy {
 
     @Override
     public String getPeriodDescription() {
-        return language.getLocalizedDescription("time.strategy.description.less.then.minute");
+        return language.getLocalizedDescription("time.strategy.description.less.than.minute");
     }
 
 }

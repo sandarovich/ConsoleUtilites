@@ -6,6 +6,7 @@ import org.joda.time.Period;
 
 /**
  * @author Olexander Kolodiazhny
+ *
  * <p>
  * This strategy is need to correct application behaviors
  * in case when period value is more than one year.
@@ -25,7 +26,7 @@ public class MoreThenYearStrategy extends TimeStrategy {
 
     @Override
     public String getPeriodDescription() {
-        TimeDescriptionFormatter formatter = new TimeDescriptionFormatter("time.strategy.description.more.then.year");
+        TimeDescriptionFormatter formatter = new TimeDescriptionFormatter("time.strategy.description.more.than.year");
         formatter.add(TimeUnit.YEAR, this.period.getYears());
         formatter.add(TimeUnit.MONTH, this.period.getMonths());
         formatter.add(TimeUnit.DAY, this.period.getDays());
