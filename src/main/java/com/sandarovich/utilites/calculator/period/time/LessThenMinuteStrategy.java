@@ -1,6 +1,7 @@
 package com.sandarovich.utilites.calculator.period.time;
 
 import com.sandarovich.utilites.calculator.period.language.Language;
+import com.sandarovich.utilites.calculator.period.time.formatter.impl.BriefTimeDescriptionFormatter;
 import org.joda.time.Period;
 
 /**
@@ -17,13 +18,14 @@ import org.joda.time.Period;
 
 public class LessThenMinuteStrategy extends TimeStrategy {
 
+    private static final String DESCRIPTION_KEY = "time.strategy.description.less.than.minute";
+
     LessThenMinuteStrategy(Period period, Language language) {
-        super(period, language);
+        super(period, new BriefTimeDescriptionFormatter(language, DESCRIPTION_KEY));
     }
 
     @Override
     public String getPeriodDescription() {
-        return language.getLocalizedDescription("time.strategy.description.less.than.minute");
+        return formatter.format();
     }
-
 }

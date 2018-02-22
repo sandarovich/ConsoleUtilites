@@ -2,6 +2,7 @@ package com.sandarovich.utilites.calculator.period.time;
 
 import com.sandarovich.utilites.calculator.period.dto.TimeUnit;
 import com.sandarovich.utilites.calculator.period.language.Language;
+import com.sandarovich.utilites.calculator.period.time.formatter.impl.ExtendedTimeDescriptionFormatter;
 import org.joda.time.Period;
 
 /**
@@ -20,13 +21,14 @@ import org.joda.time.Period;
 
 public class MoreThenYearStrategy extends TimeStrategy {
 
+    private static final String DESCRIPTION_KEY = "time.strategy.description.more.than.year";
+
     MoreThenYearStrategy(Period period, Language language) {
-        super(period, language);
+        super(period, new ExtendedTimeDescriptionFormatter(language, DESCRIPTION_KEY));
     }
 
     @Override
     public String getPeriodDescription() {
-        TimeDescriptionFormatter formatter = new TimeDescriptionFormatter("time.strategy.description.more.than.year");
         formatter.add(TimeUnit.YEAR, this.period.getYears());
         formatter.add(TimeUnit.MONTH, this.period.getMonths());
         formatter.add(TimeUnit.DAY, this.period.getDays());

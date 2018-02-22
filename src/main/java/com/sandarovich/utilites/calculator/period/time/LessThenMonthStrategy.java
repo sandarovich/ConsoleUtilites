@@ -2,6 +2,7 @@ package com.sandarovich.utilites.calculator.period.time;
 
 import com.sandarovich.utilites.calculator.period.dto.TimeUnit;
 import com.sandarovich.utilites.calculator.period.language.Language;
+import com.sandarovich.utilites.calculator.period.time.formatter.impl.ExtendedTimeDescriptionFormatter;
 import org.joda.time.Days;
 import org.joda.time.Period;
 
@@ -19,18 +20,17 @@ import org.joda.time.Period;
 
 public class LessThenMonthStrategy extends TimeStrategy {
 
+    private static final String DESCRIPTION_KEY = "time.strategy.description.less.than.month";
+
     LessThenMonthStrategy(Period period, Language language) {
-        super(period, language);
+        super(period, new ExtendedTimeDescriptionFormatter(language, DESCRIPTION_KEY));
     }
 
     @Override
     public String getPeriodDescription() {
-        TimeDescriptionFormatter formatter = new TimeDescriptionFormatter("time.strategy.description.less.than.month");
         formatter.add(TimeUnit.DAY, period.getDays() + Days.SEVEN.getDays() * period.getWeeks());
         formatter.add(TimeUnit.HOUR, period.getHours());
 
         return formatter.format();
-
     }
-
 }
