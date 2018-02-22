@@ -19,7 +19,7 @@ import org.joda.time.Period;
  * English localization: more than a year: 1 year 7 month 12 days
  */
 
-public class MoreThenYearStrategy extends TimeStrategy {
+public class MoreThenYearStrategy extends AbstractTimeStrategy {
 
     private static final String DESCRIPTION_KEY = "time.strategy.description.more.than.year";
 

@@ -2,6 +2,7 @@ package com.sandarovich.utilites.calculator.period;
 
 
 import com.sandarovich.utilites.calculator.period.language.Language;
+import com.sandarovich.utilites.calculator.period.time.AbstractTimeStrategy;
 import com.sandarovich.utilites.calculator.period.time.TimeStrategy;
 import org.joda.time.LocalDateTime;
 import org.joda.time.Period;
@@ -21,7 +22,7 @@ public class PeriodDescriptionCalculator {
     private final Period period;
     private final Language language;
 
-    public PeriodDescriptionCalculator(LocalDateTime entryDate) {
+    PeriodDescriptionCalculator(LocalDateTime entryDate) {
         this.period = new Period(entryDate, new LocalDateTime());
         this.language = Language.from("en");
     }
@@ -36,12 +37,12 @@ public class PeriodDescriptionCalculator {
      * Returns  text output, according to entry date and language localization
      */
     public String getPeriodDescription(String languageCode) {
-        TimeStrategy timeStrategy = TimeStrategy.from(period, Language.from(languageCode));
+        AbstractTimeStrategy timeStrategy = TimeStrategy.from(period, Language.from(languageCode));
         return timeStrategy.getPeriodDescription();
     }
 
     public String getPeriodDescription() {
-        TimeStrategy timeStrategy = TimeStrategy.from(period, language);
+        AbstractTimeStrategy timeStrategy = TimeStrategy.from(period, language);
         return timeStrategy.getPeriodDescription();
     }
 }

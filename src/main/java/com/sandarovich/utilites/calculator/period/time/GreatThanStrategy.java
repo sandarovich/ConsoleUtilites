@@ -4,7 +4,7 @@ import com.sandarovich.utilites.calculator.period.language.Language;
 import com.sandarovich.utilites.calculator.period.time.formatter.impl.BriefTimeDescriptionFormatter;
 import org.joda.time.Period;
 
-public class GreatThanStrategy extends TimeStrategy {
+public class GreatThanStrategy extends AbstractTimeStrategy {
 
     private static final String DESCRIPTION_KEY = "time.strategy.description.great.than.now";
 
