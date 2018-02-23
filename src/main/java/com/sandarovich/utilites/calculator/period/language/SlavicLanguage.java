@@ -33,7 +33,7 @@ class SlavicLanguage extends Language {
 
     @Override
     String getLocalizedTimeUnitValue(TimeUnit timeUnit, int value) {
-        int declensionForm = getDeclensionForm(value).getIndex();
+        DeclensionForm declensionForm = getDeclensionForm(value);
         return getLocalization().getTranslationBy(timeUnit, declensionForm);
     }
 

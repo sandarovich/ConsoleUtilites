@@ -43,6 +43,6 @@ public class EnglishLanguage extends Language {
     public String getLocalizedTimeUnitValue(TimeUnit timeUnit, int value) {
         DeclensionForm declensionForm = (value == SINGULAR_VALUE) ?
                 DeclensionForm.SINGULAR : DeclensionForm.PLURAL_ONE;
-        return getLocalization().getTranslationBy(timeUnit, declensionForm.getIndex());
+        return getLocalization().getTranslationBy(timeUnit, declensionForm);
     }
 }
