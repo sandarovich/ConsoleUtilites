@@ -16,7 +16,7 @@ import org.joda.time.Period;
  * localization: less than a day: 1 hour 2 minutes
  */
 
-public class LessThenDayStrategy extends AbstractTimeStrategy {
+public class LessThenDayStrategy extends TimeStrategy {
 
     private static final String DESCRIPTION_KEY = "time.strategy.description.less.than.day";
 
@@ -28,6 +28,7 @@ public class LessThenDayStrategy extends AbstractTimeStrategy {
     public String getPeriodDescription() {
         formatter.add(TimeUnit.HOUR, period.getHours());
         formatter.add(TimeUnit.MINUTE, period.getMinutes());
+
         return formatter.format();
     }
 }

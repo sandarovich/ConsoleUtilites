@@ -19,7 +19,7 @@ import org.joda.time.Period;
  * English localization: less than a year: 7 months 12 days
  */
 
-public class LessThenYearStrategy extends AbstractTimeStrategy {
+public class LessThenYearStrategy extends TimeStrategy {
 
     private static final String DESCRIPTION_KEY = "time.strategy.description.less.than.year";
 
@@ -31,6 +31,7 @@ public class LessThenYearStrategy extends AbstractTimeStrategy {
     public String getPeriodDescription() {
         formatter.add(TimeUnit.MONTH, period.getMonths());
         formatter.add(TimeUnit.DAY, period.getDays() + Days.SEVEN.getDays() * period.getWeeks());
+
         return formatter.format();
     }
 }

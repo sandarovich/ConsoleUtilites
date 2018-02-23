@@ -16,7 +16,7 @@ import org.joda.time.Period;
  * English localization: less than a minute
  */
 
-public class LessThenMinuteStrategy extends AbstractTimeStrategy {
+public class LessThenMinuteStrategy extends TimeStrategy {
 
     private static final String DESCRIPTION_KEY = "time.strategy.description.less.than.minute";
 

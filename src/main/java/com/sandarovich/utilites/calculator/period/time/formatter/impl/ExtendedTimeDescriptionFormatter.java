@@ -3,7 +3,7 @@ package com.sandarovich.utilites.calculator.period.time.formatter.impl;
 import com.sandarovich.utilites.calculator.period.dto.TimeUnit;
 import com.sandarovich.utilites.calculator.period.language.Language;
 import com.sandarovich.utilites.calculator.period.time.formatter.TimeDescriptionFormatter;
-import org.codehaus.plexus.util.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 
 public class ExtendedTimeDescriptionFormatter implements TimeDescriptionFormatter {

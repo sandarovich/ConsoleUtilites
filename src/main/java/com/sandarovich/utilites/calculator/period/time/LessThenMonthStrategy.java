@@ -18,7 +18,7 @@ import org.joda.time.Period;
  * English localization: less than a month: 5 days
  */
 
-public class LessThenMonthStrategy extends AbstractTimeStrategy {
+public class LessThenMonthStrategy extends TimeStrategy {
 
     private static final String DESCRIPTION_KEY = "time.strategy.description.less.than.month";
 
