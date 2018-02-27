@@ -17,7 +17,6 @@ import java.util.Locale;
  * 11 місяців
  */
 class UkraineLanguage extends SlavicLanguage {
-
     UkraineLanguage() {
         super(new Locale.Builder().setLanguage("uk").setRegion("UA").build());
     }

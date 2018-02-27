@@ -19,17 +19,6 @@ public abstract class Language {
         this.localization = new Localization(locale);
     }
 
-    public static Language from(String languageCode) {
-        switch (languageCode) {
-            case "uk":
-                return new UkraineLanguage();
-            case "ru":
-                return new RussianLanguage();
-            default:
-                return new EnglishLanguage();
-        }
-    }
-
     public String getLocalizedText(TimeUnit timeUnit, int value) {
         return getLocalizedTimeUnitValue(timeUnit, value);
     }

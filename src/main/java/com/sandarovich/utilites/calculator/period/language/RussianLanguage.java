@@ -16,7 +16,6 @@ import java.util.Locale;
  * 11 месяцев
  */
 class RussianLanguage extends SlavicLanguage {
-
     RussianLanguage() {
         super(new Locale("ru", "RU"));
     }
